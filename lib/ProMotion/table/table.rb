@@ -101,6 +101,7 @@ module ProMotion
       deletable_index_paths = []
       index_paths = [index_paths] if index_paths.kind_of?(NSIndexPath)
       index_paths.each do |index_path|
+        puts "INDEX PATH in delete_row #{index_path}"
         delete_cell = false
         delete_cell = send(:on_cell_deleted, self.promotion_table_data.cell(index_path: index_path)) if self.respond_to?("on_cell_deleted:")
         unless delete_cell == false
